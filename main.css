@@ -1,0 +1,42 @@
+body {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    height: 100vh; /* 전체 화면 높이 */
+    margin: 0; /* 기본 여백 제거 */
+}
+
+.loader {
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+svg {
+    width: 100%; /* SVG 크기를 100%로 설정 */
+    height: auto; /* 비율 유지 */
+    fill-opacity: 0;
+    animation: fadeOpacity 2s forwards 2s;
+}
+
+svg path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 2s forwards;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 1;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeOpacity {
+    from {
+        fill-opacity: 0;
+    }
+    to {
+        fill-opacity: 1;
+    }
+}
